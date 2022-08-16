@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-image: linear-gradient(white, black); }
+  body header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    body header .logo {
+      margin: .5rem;
+      padding: .5rem;
+      width: 10rem;
+      animation-name: efecto_logo;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      animation-duration: 5s;
+      animation-delay: 2s; }
+
+@keyframes efecto_logo {
+  0% {
+    opacity: 0.5; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.5; } }
+    body header h1 {
+      color: rgba(182, 0, 0, 0.551);
+      font-family: 'Comfortaa', cursive;
+      font-weight: bold; }
+    body header .subtParafernalia {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-style: oblique;
+      font-family: 'Comfortaa', cursive; }
+    body header .subtIndoor {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-style: oblique;
+      font-family: 'Comfortaa', cursive; }
+    body header .subtCultivo {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-style: oblique;
+      font-family: 'Comfortaa', cursive; }
+    body header .subtContacto {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-style: oblique;
+      font-family: 'Comfortaa', cursive; }
+    body header .navbar {
+      border: solid 1px black;
+      border-radius: 1rem; }
+      body header .navbar .collapse {
+        justify-content: center; }
+        body header .navbar .collapse .dropdown-menu {
+          border: solid 1px black;
+          border-radius: 1rem; }
+          body header .navbar .collapse .dropdown-menu .dropdown-item {
+            border-radius: 1rem;
+            opacity: .7;
+            font-size: larger;
+            font-family: 'Patrick Hand', cursive; }
+          body header .navbar .collapse .dropdown-menu .dropdown-item:hover {
+            transition: all 1s;
+            opacity: 1; }
+        body header .navbar .collapse .nav-link {
+          font-size: larger;
+          font-family: 'Patrick Hand', cursive; }
+  body .intro, body .introForm {
+    width: 90%;
+    border: solid 2px black;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    font-size: x-large; }
+  body .tituloMain, body header .subtIndex {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-style: oblique;
+    font-family: 'Comfortaa', cursive; }
+  body .proDom {
+    display: flex; }
+  body .pmv {
+    border: solid 2px black;
+    transition: all 1.5s;
+    font-family: 'Patrick Hand', cursive; }
+    body .pmv .card-img-top {
+      height: 16rem;
+      width: 10rem;
+      margin: auto; }
+    body .pmv .card-title {
+      font-weight: bold; }
+  body .pmv:hover {
+    transition: all 1.5s;
+    transform: scale(1.1);
+    border: solid 2px rgba(105, 105, 105, 0.74);
+    box-shadow: 0 0 1rem white; }
+  body .preguntas {
+    width: 85%;
+    margin: auto;
+    font-family: 'Patrick Hand', cursive; }
+  body .titRedes {
+    text-align: center;
+    font-style: oblique;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    margin-top: 1rem; }
+  body .redes {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; }
+    body .redes i {
+      color: white;
+      border-radius: 50%;
+      transition: all 1s; }
+    body .redes i:hover {
+      transition: all 1s;
+      transform: scale(1.2);
+      box-shadow: 0 0 1rem white; }
+  body .introForm {
+    margin: 2rem auto; }
+  body .formulario {
+    width: 70%;
+    margin: auto;
+    border: solid 1px black;
+    background-image: linear-gradient(to top, yellow, orange, red);
+    border-radius: 5px; }
+    body .formulario label {
+      font-family: 'Patrick Hand', cursive; }
+    body .formulario .input {
+      background-color: #cfcfcf;
+      border: solid 2px black;
+      border-radius: .5rem; }

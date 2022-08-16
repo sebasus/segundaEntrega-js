@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(white, black) ;
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .logo{
+            margin: .5rem;
+            padding: .5rem;
+            width: 10rem;
+            animation-name: efecto_logo;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+    
+        @keyframes efecto_logo {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        h1{
+            color: rgba(182, 0, 0, 0.551);
+            font-family: 'Comfortaa', cursive;
+            font-weight: bold;
+        }
+        @mixin titles {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-style: oblique;
+            font-family: 'Comfortaa', cursive;
+        }
+        .subtParafernalia{
+            @include titles
+        }
+        .subtIndoor{
+            @include titles
+        }
+        .subtCultivo{
+            @include titles
+        }
+        .subtContacto{
+            @include titles 
+        }
+        .subtIndex{
+            @extend .tituloMain;
+        }
+        .navbar{
+            border: solid 1px black;
+            border-radius: 1rem;
+            .collapse{
+                justify-content: center;
+                .dropdown-menu{
+                    border: solid 1px black;
+                    border-radius: 1rem;
+                    .dropdown-item{
+                        border-radius: 1rem;
+                        opacity: .7;
+                        font-size: larger;
+                        font-family: 'Patrick Hand', cursive;
+                    }
+                    .dropdown-item:hover{
+                        transition: all 1s;
+                        opacity: 1;
+                    }
+                }
+                .nav-link{
+                    font-size: larger;
+                    font-family: 'Patrick Hand', cursive;
+                }
+            }
+        }  
+    }
+    .intro{
+        width: 90%;
+        border: solid 2px black;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: 'Patrick Hand', cursive;
+        font-size: x-large;
+    }
+    .tituloMain{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-style: oblique;
+        font-family: 'Comfortaa', cursive;
+    }
+    .proDom{
+        display: flex;
+    }
+    .pmv{
+        border: solid 2px black;
+        transition: all 1.5s;
+        font-family: 'Patrick Hand', cursive;
+        .card-img-top{
+            height: 16rem;
+            width: 10rem;
+            margin: auto;
+        }
+        .card-title{
+            font-weight: bold;
+        }
+    }
+    .pmv:hover{
+        transition: all 1.5s;
+        transform: scale(1.1);
+        border: solid 2px rgba(105, 105, 105, 0.74);
+        box-shadow: 0 0 1rem white;
+    }
+    .preguntas{
+        width: 85%;
+        margin: auto;
+        font-family: 'Patrick Hand', cursive;
+
+    }
+    .titRedes{
+        text-align: center;
+        font-style: oblique;
+        font-family: 'Comfortaa', cursive;
+        color: white;
+        margin-top: 1rem;
+    }
+    .redes{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        i{
+            color: white;
+            border-radius: 50%;
+            transition: all 1s;
+        }
+        i:hover{
+            transition: all 1s;
+            transform: scale(1.2);
+            box-shadow: 0 0 1rem white;
+        }
+    }
+    .introForm{
+        margin:  2rem auto;
+        @extend .intro
+        
+    }
+    .formulario{
+        width: 70%;
+        margin: auto;
+        border: solid 1px black;
+        background-image: linear-gradient(to top, yellow, orange, red);
+        border-radius: 5px;
+        label{
+            font-family: 'Patrick Hand', cursive;
+        }
+        .input{
+            background-color: rgb(207, 207, 207);
+            border: solid 2px black;
+            border-radius: .5rem;
+        }
+    }
+}
