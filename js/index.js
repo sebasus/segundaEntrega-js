@@ -50,18 +50,19 @@ botonesCompra = document.querySelectorAll(".btn")
 
 mostrarProductos()
 
-console.log(botonesCompra);
+
+
 
 //CARRITO
 
-let cart
-let btnCompra
 
-/*for (btnCompra of botonesCompra){
-    btnCompra.addEventListener ("click", addCart = (e) =>{
-        localStorage.setItem =  ("card",JSON.stringify(card) );
-    })
-} */
+
+for (btnCompra of botonesCompra){
+    btnCompra.onclick = (e) =>{
+    console.log(tarjeta.price)
+};
+
+}
 
 
 
@@ -146,7 +147,7 @@ formulario.addEventListener('submit', validar= (e)=>{
 
 
     if (!comentarios.value) {
-        alert('Añade un comentario, por favor.')
+       alert('Añade un comentario, por favor.')
     } 
 
 })
