@@ -1,10 +1,4 @@
-//DOM
-
-let proDom = document.querySelector(".proDom")
-let div = ""
-
-
-const tarjetas = [
+ const tarjetas = [
     {
         id: 1,
         img :  './img home/Celulosaed.jpg" class="card-img-top" alt="Celulosa Lion Rolling Circus."',
@@ -27,77 +21,119 @@ const tarjetas = [
         price : 1500
     } 
 ]
+const storage = []
 
-mostrarProductos = () =>{
+
+abrirCompra = (id, popup) =>{
+    let tarjeta = tarjetas [id-1]
+    const {title, img, price} = tarjeta
+    popup.innerHTML = `<div>
+     <div class="closePopup">Salir</div>
+     <section class="product-detail">
+         <div class="imagen">
+             <img src="" alt="">
+         </div>
+         <div class="descripcion-detail">
+             <h3>${title}</h3>
+             <p>$ ${price}</p>
+             <div class="click">
+                 <span class="less">-</span>
+                 <span class="resultado">0</span>
+                 <span class="more">+</span>
+             </div>
+         <div class="botonCarrito">AGREGAR</div>
+     
+         </div>
+     </section>
+     </div>`
+    const closePopup = document.querySelector('.closePopup')
+    const more = document.querySelector('.more')
+    const less = document.querySelector('.less')
+    const resultado = document.querySelector('.resultado')
+    const agregarAlCarrito = document.querySelector('.botonCarrito')
+    
+    let contador = 0
+   
+    more.onclick = () => {
+        contador++
+        resultado.innerText = contador
+    }
+
+    less.onclick = () => {
+        contador--
+        //console.log(contador)
+        contador = contador < 0 ? 0 : contador
+        resultado.innerText = contador
+    }
+
+    closePopup.onclick = () => {
+        popup.classList.add('d-none')
+    }
+        
+    agregarAlCarrito.onclick = () => {
+        if(contador != 0){
+            //agrego al carrito
+            tarjeta.agregadoAlCarrito = contador
+            storage.push(tarjeta)
+            sessionStorage.setItem('cart', JSON.stringify(storage)) 
+            swal({
+                title: "Genial!",
+                text: `Agregaste ${tarjeta.agregadoAlCarrito} ${title} a tu carrito.`,
+                icon: "success",
+                button: "Entendido",
+              });
+        }else{
+            //no agregues al carrito - mensaje error
+        }
+    }
+}
+ 
+
+
+
+
+
+
+let proDom = document.querySelector(".proDom")
+
 for (tarjeta of tarjetas){
-    div += `<div class="col-lg-4 col-md-6 py-5">
-    <div class="card m-auto pmv" style="width: 18rem;">
-    <img src="${tarjeta.img}">
-    <div class="card-body">
-    <h5 class="card-title">"${tarjeta.title}"</h5>
-    <p class="card-text">"${tarjeta.description}"</p>
-    <p>$${tarjeta.price}</p>
-    <a href="#" id="${tarjeta.id}" class="btn btn-primary">Comprar</a>
-    </div>
-    </div>
-    </div>`
-}
+    const {id, img, title, description, price} = tarjeta
+    
+    proDom.innerHTML +=  `<div class="col-lg-4 col-md-6 py-5">
+                <div class="card m-auto pmv" style="width: 18rem;">
+                    <img src="${img}">
+                    <div class="card-body">
+                        <h5 class="card-title">"${title}"</h5>
+                        <p class="card-text">"${description}"</p>
+                        <p>$${price}</p>
+                        <a href="#" class="btn btn-primary" >Comprar</a>
+                        <input type='hidden' class='info-id' value="${id}"
+                    </div>
+                </div>
+            </div>`
+        }
+const botonesComprar= document.querySelectorAll(".btn")
 
-proDom.innerHTML +=  div
+const popup = document.querySelector(".popupDetalle")
 
-botonesCompra = document.querySelectorAll(".btn") 
-}
-
-mostrarProductos()
-
-
-
-
-//CARRITO
+let closePopup 
 
 
-
-for (btnCompra of botonesCompra){
+for (btnCompra of botonesComprar){
     btnCompra.onclick = (e) =>{
-    console.log(tarjeta.price)
-};
+        popup.classList.remove('d-none')
+         let id = e.target.nextElementSibling.value 
+        abrirCompra (id, popup) 
 
-}
+     
 
+        
+        //console.log(id) 
 
-
-
-
-
+    } 
  
-
-/*
-tarjeta = tarjeta ()
-
-tarjeta = () =>{
-    car
 }
 
-
-
-
-const addItem = () => {
-
-}
-
-const deleteItem = () =>{
-
-}
-
-const deleteCart = () =>{
-
-}
- 
-
-
-
-
- */
 
 
 
