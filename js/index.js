@@ -83,7 +83,12 @@ abrirCompra = (id, popup) =>{
                 button: "Entendido",
               });
         }else{
-            //no agregues al carrito - mensaje error
+            swal({
+                title: "ERROR!",
+                text: "No agregaste nada al carrito!",
+                icon: "error",
+                button: "Entendido",
+              });
         }
     }
 }
