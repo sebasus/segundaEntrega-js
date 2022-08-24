@@ -128,6 +128,18 @@ body{
         border: solid 2px rgba(105, 105, 105, 0.74);
         box-shadow: 0 0 1rem white;
     } 
+    .popupDetalle{
+        background-color: red;
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     /* .popupDetalle{
         position: fixed;
         z-index: 1;

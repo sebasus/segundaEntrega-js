@@ -167,6 +167,25 @@ body {
     transform: scale(1.1);
     border: solid 2px rgba(105, 105, 105, 0.74);
     box-shadow: 0 0 1rem white; }
+  body .popupDetalle {
+    background-color: grey;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    border: solid 2px black;
+    border-radius: 5%;}
+
   body .preguntas {
     width: 85%;
     margin: auto;
